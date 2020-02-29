@@ -1,4 +1,12 @@
 #!/usr/bin/ruby -w
 
 
-puts "Hello, Ruby!";
+END {
+  puts "Terminating Ruby Program."
+}
+
+BEGIN {
+  puts "Initializing Ruby Program."
+}
+
+puts "Hello, Ruby!"
