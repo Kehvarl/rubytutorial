@@ -8,9 +8,9 @@ class Customer
   end
 
   def display_details
-    puts "Customer id: #@cust_id"
-    puts "Customer name:  #@cust_name"
-    puts "Customer address:  #@cust_addr"
+    puts "Customer id: #{@cust_id}"
+    puts "Customer name:  #{@cust_name}"
+    puts "Customer address:  #{@cust_addr}"
   end
 
 end
