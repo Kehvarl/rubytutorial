@@ -29,3 +29,12 @@ cust2 = Customer.new(2, "two", "there")
 puts cust1.display_details
 puts cust2.display_details
 
+ary = [ "fred", 10, 3.14, "This is a string", "The last element"]
+ary.each do |i|
+  puts i
+end
+
+colors = { "red" => 0xf00, "greed" => 0x0f0, "blue" => 0x00f }
+colors.each do |key, value|
+  print key, " is ", value, "\n"
+end
