@@ -3,6 +3,10 @@ class Creature
       @pos_x, @pos_y = x, y
       @moves = Array.new(8, 1)
   end
+
+  def spawn
+    puts self
+  end
 end
 
 class World
