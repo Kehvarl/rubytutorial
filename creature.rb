@@ -6,11 +6,13 @@ class Creature
 
   def set_moves(moves)
     @moves = moves
+    @moves.each {|m| m += rand(-1..1)}
   end
 
   def spawn
     new_creature = Creature.new(@pos_x, @pos_y)
     new_creature.set_moves(@moves)
+
   end
 end
 
