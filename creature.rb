@@ -4,8 +4,13 @@ class Creature
       @moves = Array.new(8, 1)
   end
 
+  def set_moves(moves)
+    @moves = moves
+  end
+
   def spawn
-    puts self
+    new_creature = Creature.new(@pos_x, @pos_y)
+    new_creature.set_moves(@moves)
   end
 end
 
