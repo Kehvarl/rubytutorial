@@ -5,14 +5,18 @@ class Creature
   end
 
   def set_moves(moves)
-    @moves = moves
-    @moves.each {|m| m += rand(-1..1)}
+    @moves = moves.each {rand(3)}
   end
 
   def spawn
     new_creature = Creature.new(@pos_x, @pos_y)
     new_creature.set_moves(@moves)
     new_creature
+  end
+
+  def display
+    puts @pos_x, @pos_y
+    puts @moves
   end
 end
 
@@ -33,9 +37,9 @@ end
 
 creature = Creature.new(5, 5)
 puts "Creature 1"
-puts creature
+creature.display
 
 new_creature = creature.spawn
 puts "Creature 2"
-puts new_creature
+new_creature.display
 
