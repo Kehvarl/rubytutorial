@@ -12,7 +12,7 @@ class Creature
   def spawn
     new_creature = Creature.new(@pos_x, @pos_y)
     new_creature.set_moves(@moves)
-
+    new_creature
   end
 end
 
@@ -30,4 +30,12 @@ class World
     x + y * @width
   end
 end
+
+creature = Creature.new(5, 5)
+puts "Creature 1"
+puts creature
+
+new_creature = creature.spawn
+puts "Creature 2"
+puts new_creature
 
