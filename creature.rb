@@ -5,7 +5,7 @@ class Creature
   end
 
   def set_moves(moves)
-    @moves = moves.each {rand(3)}
+    @moves = moves.map {|m| [m + rand(-1..1), 0].max }
   end
 
   def spawn
