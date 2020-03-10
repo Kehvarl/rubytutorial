@@ -14,6 +14,16 @@ class Creature
     new_creature
   end
 
+  def get_move
+    direction_array = Array.new
+    direction = 0
+    @moves.each do |count|
+      direction_array.append(Array.new(count, direction)).flatten!
+      direction += 1
+    end
+    direction_array.sample
+  end
+
   def display
     puts @pos_x, @pos_y
     puts @moves
@@ -38,8 +48,9 @@ end
 creature = Creature.new(5, 5)
 puts "Creature 1"
 creature.display
+puts Move: creature.get_move
 
 new_creature = creature.spawn
 puts "Creature 2"
 new_creature.display
-
+puts Move: new_creature.get_move
