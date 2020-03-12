@@ -34,6 +34,9 @@ class World
   def initialize(w, h)
     @width, @height = w, h
     @game_map = Array.new(w * h, 0)
+
+    @food_map = Array.new(w * h, 0)
+    @creatures = Array.new(10)
   end
 
   def get_tile(x, y)
