@@ -42,10 +42,19 @@ class World
   def jungle(x, y, w, h)
     (y..y + h).each {|y1|
       (x..x + w).each {|x1|
-        @game_map[self.get_tile_address(x1, y1)] += 1
+        @game_map[self.get_tile_address(x1, y1)] = 4
       }
     }
+  end
 
+  def spawn_food(x, y, w, h, chance)
+    (y..y + h-1).each {|y1|
+      (x..x + w-1).each {|x1|
+        if rand(10) <= chance
+          @food_map[self.get_tile_address(x1, y1)] += 1
+        end
+      }
+    }
   end
 
   def get_tile(x, y)
@@ -57,7 +66,7 @@ class World
   end
 
   def display
-    puts @game_map
+    puts @food_map
   end
 end
 
@@ -73,5 +82,8 @@ puts Move: new_creature.get_move
 
 world = World.new(30, 30)
 world.jungle(10, 10, 10, 10)
+
+world.spawn_food(0, 0, 30, 30, 2)
+world.spawn_food(10, 10, 10, 10, 4)
 
 world.display
