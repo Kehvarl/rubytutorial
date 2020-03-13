@@ -39,12 +39,25 @@ class World
     @creatures = Array.new(10)
   end
 
+  def jungle(x, y, w, h)
+    (y..y + h).each {|y1|
+      (x..x + w).each {|x1|
+        @game_map[self.get_tile_address(x1, y1)] += 1
+      }
+    }
+
+  end
+
   def get_tile(x, y)
     @game_map[self.get_tile_address(x, y)]
   end
 
   def get_tile_address(x, y)
     x + y * @width
+  end
+
+  def display
+    puts @game_map
   end
 end
 
@@ -57,3 +70,8 @@ new_creature = creature.spawn
 puts "Creature 2"
 new_creature.display
 puts Move: new_creature.get_move
+
+world = World.new(30, 30)
+world.jungle(10, 10, 10, 10)
+
+world.display
